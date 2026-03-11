@@ -2,8 +2,17 @@ package ar.com.unpaz.model;
 
 public class Cuenta {
     private int numeroCuenta;
-    private String titular;
     private double saldo;
+    private Cliente titular;
+
+    // Titular
+    public Cliente getTitular() {
+        return this.titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
 
     // Cuenta
     public int getNumberCuenta() {
@@ -14,16 +23,8 @@ public class Cuenta {
         this.numeroCuenta = numeroCuenta;
     }
 
-    // Titular
-    public String getTitular() {
-        return this.titular;
-    }
 
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
-    //Saldo
+    // Saldo
     public double getSaldo() {
         return this.saldo;
     }

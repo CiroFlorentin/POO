@@ -1,11 +1,29 @@
 package ar.com.unpaz.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente {
     public String nombre;
     public String apellido;
     public int dni;
     public Contacto contacto;
-    public Cuenta cuenta;
+    public List<Cuenta> cuentas;
+
+    //Cuenta
+
+    public Cliente() {
+        this.cuentas = new ArrayList<>();
+    }
+
+    public List<Cuenta> getCuenta() {
+        return this.cuentas;
+    }
+
+    public void setCuenta(Cuenta nuevaCuenta) {
+        this.cuentas.add(nuevaCuenta);
+        nuevaCuenta.setTitular(this);
+    }
 
     // Nombre
     public String getNombre() {
@@ -32,15 +50,6 @@ public class Cliente {
 
     public void setDni(int dni) {
         this.dni = dni;
-    }
-
-    // Cuenta
-    public Cuenta getCuenta() {
-        return this.cuenta;
-    }
-
-    public void setCuenta(Cuenta cuenta) {
-        this.cuenta = cuenta;
     }
 
     // Contacto

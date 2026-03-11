@@ -5,20 +5,6 @@ import ar.com.unpaz.model.*;
 public class Main {
     public static void main(String[] args) {
 
-        Cuenta cuenta1 = new Cuenta();
-
-        cuenta1.setNumeroCuenta(1001);
-
-        cuenta1.setSaldo(2000.50);
-
-        cuenta1.setTitular("Ciro Florentin");
-
-        System.out.println("Numero de cuenta " + cuenta1.getNumberCuenta());
-        System.out.println("Titular de la cuenta " + cuenta1.getTitular());
-        System.out.println("Saldo de la cuenta: " + cuenta1.getSaldo());
-
-        System.out.println("------------------------");
-
         Cliente cliente1 = new Cliente();
 
         cliente1.setNombre("Ciro");
@@ -47,8 +33,36 @@ public class Main {
         System.out.println("------------------------");
 
 
+        Cuenta cuenta1 = new Cuenta();
+
+        cuenta1.setNumeroCuenta(1001);
+
+        cuenta1.setSaldo(2000.50);
+
+        Cuenta cuenta2 = new Cuenta();
+
+        cuenta2.setNumeroCuenta(1002);
+        cuenta2.setSaldo(1000.50);
+
         cliente1.setCuenta(cuenta1);
+        cliente1.setCuenta(cuenta2);
         cliente1.setContacto(contacto1);
+
+        System.out.println("Cuenta 1: ");
+        System.out.println("Cuenta Nro: " + cuenta1.getNumberCuenta());
+        System.out.println("Titular: " + cuenta1.getTitular().getNombre());
+        System.out.println("DNI: " + cuenta1.getTitular().getDni());
+        System.out.println("Email de contacto: " + cuenta1.getTitular().getContacto().getEmail());
+        System.out.println("------------------------");
+
+        System.out.println("Cuenta 2: ");
+        System.out.println("Cuenta Nro: " + cuenta2.getNumberCuenta());
+        System.out.println("Titular: " + cuenta2.getTitular().getNombre());
+        System.out.println("DNI: " + cuenta2.getTitular().getDni());
+        System.out.println("Email de contacto: " + cuenta2.getTitular().getContacto().getEmail());
+
+
+
 
     }
 }
