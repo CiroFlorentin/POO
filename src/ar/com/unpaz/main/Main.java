@@ -61,8 +61,5 @@ public class Main {
         System.out.println("DNI: " + cuenta2.getTitular().getDni());
         System.out.println("Email de contacto: " + cuenta2.getTitular().getContacto().getEmail());
 
-
-
-
     }
 }
