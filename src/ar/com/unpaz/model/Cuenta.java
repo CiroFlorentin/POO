@@ -1,35 +1,36 @@
 package ar.com.unpaz.model;
 
-public class Cuenta {
-    private int numeroCuenta;
-    private double saldo;
+public abstract class Cuenta {
+    private String numeroCuenta;
+    protected double saldo;
     private Cliente titular;
 
-    // Titular
+    public Cuenta(String numeroCuenta, Cliente titular) {
+        this.numeroCuenta = numeroCuenta;
+        this.titular = titular;
+        this.saldo = 0.0;
+    }
+
+    public void depositar(double monto) {
+        if (monto > 0) saldo += monto;
+    }
+
+    public abstract boolean retirar(double monto);
+
+    // Getters
+    public String getNumeroCuenta() {
+        return this.numeroCuenta;
+    }
     public Cliente getTitular() {
         return this.titular;
     }
 
-    public void setTitular(Cliente titular) {
-        this.titular = titular;
-    }
-
-    // Cuenta
-    public int getNumberCuenta() {
-        return this.numeroCuenta;
-    }
-
-    public void setNumeroCuenta(int numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
-
-
-    // Saldo
     public double getSaldo() {
         return this.saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    // Setters
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
     }
 }

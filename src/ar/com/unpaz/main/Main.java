@@ -2,64 +2,46 @@ package ar.com.unpaz.main;
 
 import ar.com.unpaz.model.*;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        // Cuenta 1
+        Contacto conCiro = new Contacto("Paunero", "Jose C. Paz", 1024, 1665, "cfloren01@gmail.com");
+        Cliente Ciro = new Cliente("Ciro", "Florentin", 45072536, conCiro);
 
-        Cliente cliente1 = new Cliente();
+        // Cuentas de banco
+        CajaAhorro ca = new CajaAhorro("CA-001", Ciro);
+        ca.depositar(5000);
 
-        cliente1.setNombre("Ciro");
-        cliente1.setApellido("Florentin");
-        cliente1.setDni(45072536);
+        CuentaCorriente cc = new CuentaCorriente("CC-001", Ciro, 10000);
+        cc.depositar(10000);
+        // Banco
+        Banco unpaz = new Banco("Banco UNPAZ");
+        unpaz.setCuenta(ca);
+        unpaz.setCuenta(cc);
 
-        System.out.println("Nombre: " + cliente1.getNombre());
-        System.out.println("Apellido: " + cliente1.getApellido());
-        System.out.println("DNI: " + cliente1.getDni());
+        unpaz.getCuentas();
 
-        System.out.println("------------------------");
+        //gastos
+        System.out.println("Compra de un auto con CC");
+        System.out.println(cc.retirar(12000) ? "Se pago $12000" : "Saldo Insuficiente");
+        System.out.println(cc.retirar(12000) ? "Se pago $12000" : "Saldo Insuficiente");
 
-        Contacto contacto1 = new Contacto();
-        contacto1.setCalle("piñero");
-        contacto1.setCodigoPostal(1664);
-        contacto1.setNumero(1024);
-        contacto1.setLocalidad("Jose C Paz");
-        contacto1.setEmail("cfloren01@gmail.com");
+        System.out.println("Compra de una heladera con Ca");
+        System.out.println(ca.retirar(2000) ? "Se pago $2000" : "Saldo Insuficiente");
 
-        System.out.println("Calle: " + contacto1.getCalle());
-        System.out.println("Numero: " + contacto1.getNumero());
-        System.out.println("Localidad: " + contacto1.getLocalidad());
-        System.out.println("Cp: " + contacto1.getCodigoPostal());
-        System.out.println("Email: " + contacto1.getEmail());
+        unpaz.getCuentas();
 
-        System.out.println("------------------------");
-
-
-        Cuenta cuenta1 = new Cuenta();
-
-        cuenta1.setNumeroCuenta(1001);
-
-        cuenta1.setSaldo(2000.50);
-
-        Cuenta cuenta2 = new Cuenta();
-
-        cuenta2.setNumeroCuenta(1002);
-        cuenta2.setSaldo(1000.50);
-
-        cliente1.setCuenta(cuenta1);
-        cliente1.setCuenta(cuenta2);
-        cliente1.setContacto(contacto1);
-
-        System.out.println("Cuenta 1: ");
-        System.out.println("Cuenta Nro: " + cuenta1.getNumberCuenta());
-        System.out.println("Titular: " + cuenta1.getTitular().getNombre());
-        System.out.println("DNI: " + cuenta1.getTitular().getDni());
-        System.out.println("Email de contacto: " + cuenta1.getTitular().getContacto().getEmail());
-        System.out.println("------------------------");
-
-        System.out.println("Cuenta 2: ");
-        System.out.println("Cuenta Nro: " + cuenta2.getNumberCuenta());
-        System.out.println("Titular: " + cuenta2.getTitular().getNombre());
-        System.out.println("DNI: " + cuenta2.getTitular().getDni());
-        System.out.println("Email de contacto: " + cuenta2.getTitular().getContacto().getEmail());
-
+        //Busqueda por dni
+        System.out.println("Cuentas con el DNI 45072536");
+        List<Cuenta> cuentasEncontradas = unpaz.getCuentaPorDni(45072536);
+        if (cuentasEncontradas.isEmpty()) {
+            System.out.println("No se encontraron cuentas con ese DNI");
+        } else {
+            for (Cuenta c : cuentasEncontradas) {
+                System.out.println("Numero de cuenta: " + c.getNumeroCuenta() + " | Saldo: " + c.getSaldo());
+            }
+        }
     }
 }
