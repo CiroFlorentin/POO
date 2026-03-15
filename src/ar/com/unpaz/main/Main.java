@@ -2,46 +2,162 @@ package ar.com.unpaz.main;
 
 import ar.com.unpaz.model.*;
 
-import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Cuenta 1
-        Contacto conCiro = new Contacto("Paunero", "Jose C. Paz", 1024, 1665, "cfloren01@gmail.com");
-        Cliente Ciro = new Cliente("Ciro", "Florentin", 45072536, conCiro);
+        Scanner sc = new Scanner(System.in);
+        Banco banco = new Banco("Banco de Unpaz");
+        cargarDatosPrueba(banco);
+        int opcion = 0;
 
-        // Cuentas de banco
-        CajaAhorro ca = new CajaAhorro("CA-001", Ciro);
-        ca.depositar(5000);
+        System.out.println("Bienvenido al Sistema del " + banco.getNombre());
 
-        CuentaCorriente cc = new CuentaCorriente("CC-001", Ciro, 10000);
-        cc.depositar(10000);
-        // Banco
-        Banco unpaz = new Banco("Banco UNPAZ");
-        unpaz.setCuenta(ca);
-        unpaz.setCuenta(cc);
+        do {
+            mostrarMenuPrincipal();
+            opcion = leerEntero(sc, "Seleccione una opcion: ");
 
-        unpaz.getCuentas();
-
-        //gastos
-        System.out.println("Compra de un auto con CC");
-        System.out.println(cc.retirar(12000) ? "Se pago $12000" : "Saldo Insuficiente");
-        System.out.println(cc.retirar(12000) ? "Se pago $12000" : "Saldo Insuficiente");
-
-        System.out.println("Compra de una heladera con Ca");
-        System.out.println(ca.retirar(2000) ? "Se pago $2000" : "Saldo Insuficiente");
-
-        unpaz.getCuentas();
-
-        //Busqueda por dni
-        System.out.println("Cuentas con el DNI 45072536");
-        List<Cuenta> cuentasEncontradas = unpaz.getCuentaPorDni(45072536);
-        if (cuentasEncontradas.isEmpty()) {
-            System.out.println("No se encontraron cuentas con ese DNI");
-        } else {
-            for (Cuenta c : cuentasEncontradas) {
-                System.out.println("Numero de cuenta: " + c.getNumeroCuenta() + " | Saldo: " + c.getSaldo());
+            switch (opcion) {
+                case 1:
+                    crearCuentaMenu(sc, banco);
+                    break;
+                case 2:
+                    banco.getCuentas();
+                    break;
+                case 3:
+                    realizarDeposito(sc, banco);
+                    break;
+                case 4:
+                    realizarTrans(sc, banco);
+                    break;
+                case 5:
+                    banco.getReporteDeudores();
+                    break;
+                case 0:
+                    System.out.println("Saliendo del sistema.");
+                    break;
+                default:
+                    System.out.println("Opcion no valida.");
             }
         }
+        while (opcion != 0);
+        sc.close();
+    }
+
+    private static void mostrarMenuPrincipal() {
+        System.out.println("\n--- MENÚ DE OPERACIONES ---");
+        System.out.println("1. Crear Cuenta");
+        System.out.println("2. Ver todas las cuentas");
+        System.out.println("3. Depositar");
+        System.out.println("4. Transferir");
+        System.out.println("5. Ver Deudores");
+        System.out.println("0. Salir");
+        System.out.print("Seleccione una opción: ");
+    }
+
+    private static void crearCuentaMenu(Scanner sc, Banco banco) {
+        System.out.println("\n1. Caja de ahoros | 2. Cuenta Corriente");
+        int tipo = leerEntero(sc, "Tipo: ");
+
+        Cliente nuevoCliente = pedirDatosCliente(sc);
+
+        switch (tipo) {
+            case 1:
+                CajaAhorro nuevaCaja = new CajaAhorro(nuevoCliente);
+                banco.setCuenta(nuevaCaja);
+                System.out.println("Exito. Nro: " + nuevaCaja.getNumeroCuenta());
+                break;
+            case 2:
+                CuentaCorriente nuevaCC = new CuentaCorriente(nuevoCliente, 5000);
+                banco.setCuenta(nuevaCC);
+                System.out.println("Exito. Nro: " + nuevaCC.getNumeroCuenta());
+                break;
+            default:
+                System.out.println("Opcion no valida.");
+        }
+    }
+
+    private static Cliente pedirDatosCliente(Scanner sc) {
+        System.out.print("Nombre: ");
+        String nom = sc.nextLine();
+        System.out.print("Apellido: ");
+        String ape = sc.nextLine();
+        int dni = leerEntero(sc, "DNI: ");
+
+        System.out.println("--- Contacto ---");
+        System.out.print("Calle: ");
+        String calle = sc.nextLine();
+        System.out.print("Localidad: ");
+        String loc = sc.nextLine();
+        int nro = leerEntero(sc, "Altura: ");
+        int cp = leerEntero(sc, "CP: ");
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+
+        Contacto con = new Contacto(calle, loc, nro, cp, email);
+        return new Cliente(nom, ape, dni, con);
+    }
+
+    private static int leerEntero(Scanner sc, String mensaje) {
+        System.out.print(mensaje);
+        int valor = sc.nextInt();
+        sc.nextLine();
+        return valor;
+    }
+
+    private static double leerDouble(Scanner sc, String mensaje) {
+        System.out.print(mensaje);
+        double valor = sc.nextDouble();
+        sc.nextLine();
+        return valor;
+    }
+
+    private static void realizarDeposito(Scanner sc, Banco banco) {
+        System.out.print("Nro de cuenta: ");
+        String nroCuenta = sc.nextLine().toUpperCase().trim();
+        Cuenta cuenta = banco.getCuentaPorNumero(nroCuenta);
+        if (cuenta == null) {
+            System.err.println("❌ Error: La cuenta " + nroCuenta + " no existe.");
+            return;
+        }
+        double monto = leerDouble(sc, "Monto a depositar: $");
+        cuenta.depositar(monto);
+        System.out.println("✅ Depósito exitoso. Nuevo saldo: $" + cuenta.getSaldo());
+    }
+
+    private static void realizarTrans(Scanner sc, Banco banco) {
+        System.out.print("Número de cuenta ORIGEN: ");
+        String origen = sc.nextLine().toUpperCase().trim();
+        System.out.print("Número de cuenta DESTINO: ");
+        String destino = sc.nextLine().toUpperCase().trim();
+        double monto = leerDouble(sc, "Monto a transferir: $");
+
+        try {
+            banco.transferir(origen, destino, monto);
+        } catch (CuentaNoEncontrada e) {
+            System.err.println("⚠️ Error de búsqueda: " + e.getMessage());
+        } catch (SaldoInsuficienteException e) {
+            System.err.println("🚫 Error de saldo: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Unexpected error: " + e.getMessage());
+        }
+    }
+
+    //mock datos
+    private static void cargarDatosPrueba(Banco banco) {
+        Contacto c1 = new Contacto("Av. Siempre Viva 742", "Springfield", 123, 1665, "homer@test.com");
+        Cliente cliente1 = new Cliente("Homero", "Simpson", 11111111, c1);
+
+        CajaAhorro ca = new CajaAhorro(cliente1);
+        ca.depositar(10000); // Le damos saldo inicial para probar transferencias
+        banco.setCuenta(ca);
+
+        Contacto c2 = new Contacto("Calle Falsa 123", "Paz", 456, 1665, "ned@test.com");
+        Cliente cliente2 = new Cliente("Ned", "Flanders", 22222222, c2);
+
+        CuentaCorriente cc = new CuentaCorriente(cliente2, 5000);
+        banco.setCuenta(cc);
+
+        System.out.println(">>> Datos de prueba cargados (CA-001 y CC-001)");
     }
 }

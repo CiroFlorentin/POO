@@ -15,7 +15,7 @@ public abstract class Cuenta {
         if (monto > 0) saldo += monto;
     }
 
-    public abstract boolean retirar(double monto);
+    public abstract boolean retirar(double monto) throws SaldoInsuficienteException;
 
     // Getters
     public String getNumeroCuenta() {
