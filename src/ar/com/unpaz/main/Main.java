@@ -56,7 +56,7 @@ public class Main {
     }
 
     private static void crearCuentaMenu(Scanner sc, Banco banco) {
-        System.out.println("\n1. Caja de ahoros | 2. Cuenta Corriente");
+        System.out.println("\n1. Caja de ahoros | 2. Cuenta Corriente | 3. Cuenta Sueldo");
         int tipo = leerEntero(sc, "Tipo: ");
 
         Cliente nuevoCliente = pedirDatosCliente(sc);
@@ -72,6 +72,12 @@ public class Main {
                 banco.setCuenta(nuevaCC);
                 System.out.println("Exito. Nro: " + nuevaCC.getNumeroCuenta());
                 break;
+            case 3:
+                System.out.print("Nombre de la empresa: ");
+                String empresa = sc.nextLine();
+                CuentaSueldo nuevaCS = new CuentaSueldo(nuevoCliente, empresa);
+                banco.setCuenta(nuevaCS);
+                System.out.println("Exito. Nro: " + nuevaCS.getNumeroCuenta());
             default:
                 System.out.println("Opcion no valida.");
         }
