@@ -1,4 +1,4 @@
-package ar.com.unpaz.model;
+package ar.com.unpaz.Model;
 
 public class CajaAhorro extends Cuenta {
     private static int contadorCa = 1;

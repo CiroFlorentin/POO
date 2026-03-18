@@ -1,7 +1,9 @@
-package ar.com.unpaz.main;
+package ar.com.unpaz.Main;
 
-import ar.com.unpaz.model.*;
+import ar.com.unpaz.Model.*;
+import ar.com.unpaz.Repository.LecturaArchivo;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -33,6 +35,8 @@ public class Main {
                 case 5:
                     banco.getReporteDeudores();
                     break;
+                case 6:
+                    cargarDatos(banco);
                 case 0:
                     System.out.println("Saliendo del sistema.");
                     break;
@@ -51,6 +55,7 @@ public class Main {
         System.out.println("3. Depositar");
         System.out.println("4. Transferir");
         System.out.println("5. Ver Deudores");
+        System.out.println("6. Cargar Datos");
         System.out.println("0. Salir");
         System.out.print("Seleccione una opción: ");
     }
@@ -149,6 +154,15 @@ public class Main {
         }
     }
 
+    private static void cargarDatos(Banco banco) {
+        LecturaArchivo lecturaArchivo = new LecturaArchivo();
+        List<CuentaCorriente> listadoCuentas = lecturaArchivo.leerArchivo();
+        for (CuentaCorriente cuenta : listadoCuentas) {
+            banco.setCuenta(cuenta);
+            System.out.println("Cuenta cargada: " + cuenta.getNumeroCuenta());
+        }
+    }
+
     //mock datos
     private static void cargarDatosPrueba(Banco banco) {
         Contacto c1 = new Contacto("Av. Siempre Viva 742", "Springfield", 123, 1665, "homer@test.com");
@@ -166,4 +180,6 @@ public class Main {
 
         System.out.println(">>> Datos de prueba cargados (CA-001 y CC-001)");
     }
+
+
 }

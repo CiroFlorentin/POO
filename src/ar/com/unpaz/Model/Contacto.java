@@ -1,4 +1,4 @@
-package ar.com.unpaz.model;
+package ar.com.unpaz.Model;
 
 public class Contacto {
     private String calle;

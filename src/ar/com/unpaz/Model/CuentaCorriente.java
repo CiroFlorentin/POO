@@ -1,4 +1,4 @@
-package ar.com.unpaz.model;
+package ar.com.unpaz.Model;
 
 public class CuentaCorriente extends Cuenta {
 
@@ -9,6 +9,13 @@ public class CuentaCorriente extends Cuenta {
         super(("CC-" + String.format("%03d", contadorCC++)), titular);
         this.limiteDescubierto = limite;
     }
+
+    public CuentaCorriente(Cliente titular, double limite, double saldo) {
+        super(("CC-" + String.format("%03d", contadorCC++)), titular);
+        this.limiteDescubierto = limite;
+        this.saldo = saldo;
+    }
+
 
     double montoDisponible = saldo + limiteDescubierto;
     @Override

@@ -1,4 +1,4 @@
-package ar.com.unpaz.model;
+package ar.com.unpaz.Model;
 
 public abstract class Cuenta {
     private String numeroCuenta;
@@ -32,5 +32,9 @@ public abstract class Cuenta {
     // Setters
     public void setTitular(Cliente titular) {
         this.titular = titular;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 }
