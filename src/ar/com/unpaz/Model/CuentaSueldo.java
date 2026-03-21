@@ -9,6 +9,10 @@ public class CuentaSueldo extends Cuenta {
         this.empresa = empresa;
     }
 
+    public CuentaSueldo(Cliente titular, double saldo) {
+        super(("CS-" + String.format("%03d", contadorCS++)), titular);
+        this.saldo = saldo;
+    }
     @Override
     public boolean retirar(double monto) throws SaldoInsuficienteException {
         if (monto > saldo) {
@@ -19,8 +23,13 @@ public class CuentaSueldo extends Cuenta {
         return true;
     }
 
-    // Getters
+    //Getters
     public String getEmpresa() {
-        return this.empresa;
+        return empresa;
+    }
+
+    //Setters
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 }

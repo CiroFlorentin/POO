@@ -42,9 +42,19 @@ public class Banco {
     public void getCuentas() {
         System.out.println("--- Cuentas en el Banco " + nombre + " ---");
         for (Cuenta c : cuentas) {
-            System.out.println("Numero: " + c.getNumeroCuenta() +
-                    " | Titular: " + c.getTitular().getNombre() +
-                    " | Saldo: " + c.getSaldo());
+
+            if (c instanceof CuentaCorriente cc) {
+
+                System.out.println("Numero: " + cc.getNumeroCuenta() +
+                        " | Titular: " + cc.getTitular().getNombre() +
+                        " | Saldo: " + cc.getSaldo() +
+                        " | Descubierto: " + cc.getLimiteDescubierto());
+
+            } else {
+                System.out.println("Numero: " + c.getNumeroCuenta() +
+                        " | Titular: " + c.getTitular().getNombre() +
+                        " | Saldo: " + c.getSaldo());
+            }
         }
     }
 
@@ -84,9 +94,17 @@ public class Banco {
         return nombre;
     }
 
+
     // Setters
     public void setCuenta(Cuenta nuevaCuenta) {
         this.cuentas.add(nuevaCuenta);
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCuentas(List<Cuenta> cuentas) {
+        this.cuentas = cuentas;
+    }
 }

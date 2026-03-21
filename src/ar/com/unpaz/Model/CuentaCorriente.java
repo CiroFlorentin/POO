@@ -27,4 +27,23 @@ public class CuentaCorriente extends Cuenta {
         saldo -= monto;
         return true;
     }
+
+    //Getters
+    public double getLimiteDescubierto() {
+        return limiteDescubierto;
+    }
+
+    public double getMontoDisponible() {
+        return montoDisponible;
+    }
+
+    //Setters
+    public void setMontoDisponible(double montoDisponible) {
+        this.montoDisponible = montoDisponible;
+    }
+
+    public void setLimiteDescubierto(double limiteDescubierto) {
+        this.limiteDescubierto = limiteDescubierto;
+    }
+
 }

@@ -37,4 +37,8 @@ public abstract class Cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
 }

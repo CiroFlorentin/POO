@@ -1,50 +1,50 @@
-Alejandro;Ruiz;34567890;Av. Rivadavia;CABA;4560;1406;aruiz@email.com;2450.00;1500.00
-Mónica;Suárez;28123456;Calle Corrientes;Rosario;120;2000;msuarez@email.com;-120.50;500.00
-Javier;Méndez;39876543;Bv. Oroño;Santa Fe;890;3000;jmendez@email.com;0.00;300.00
-Lucía;Torres;32112233;9 de Julio;Córdoba;1250;5000;ltorres@email.com;340.25;1000.00
-Ricardo;Peña;25443322;San Martín;Mendoza;55;5500;rpena@email.com;12500.80;5000.00
-Sofía;Castro;41223344;Colón;Mar del Plata;3421;7600;scastro@email.com;-15.00;200.00
-Gabriel;Ortiz;30998877;Belgrano;Salta;678;4400;gortiz@email.com;670.45;800.00
-Valeria;Núñez;35667788;Sarmiento;Tucumán;102;4000;vnunez@email.com;2100.00;1200.00
-Fernando;Silva;22334455;Pueyrredón;Neuquén;889;8300;fsilva@email.com;-450.20;1000.00
-Beatriz;Luna;27889900;Mitre;La Plata;14;1900;bluna@email.com;89.30;400.00
-Hugo;Morales;33445566;Entre Ríos;Bahía Blanca;770;8000;hmorales@email.com;15.75;300.00
-Carmen;Reyes;29001122;Moreno;CABA;231;1001;creyes@email.com;0.00;600.00
-Diego;Delgado;36554433;Paso;Posadas;1540;3300;ddelgado@email.com;5600.00;2500.00
-Patricia;León;24332211;Alvear;Resistencia;92;3500;pleon@email.com;-200.00;750.00
-Raúl;Herrera;31221100;España;Jujuy;430;4600;rherrera@email.com;120.10;400.00
-Isabel;Domínguez;37887766;Libertad;CABA;1200;1012;idominguez@email.com;4300.50;2000.00
-Andrés;Vargas;26556677;Ituzaingó;Corrientes;654;3400;avargas@email.com;980.00;1000.00
-Paola;Castillo;40110022;Lavalle;CABA;88;1047;pcastillo@email.com;-55.60;300.00
-Sergio;Flores;38776655;Maipú;Vicente López;212;1602;sflores@email.com;12.00;250.00
-Adriana;Jiménez;33441122;French;CABA;3200;1425;ajimenez@email.com;0.00;500.00
-Manuel;Moreno;21334455;Berutti;Avellaneda;115;1870;mmoreno@email.com;310.40;600.00
-Gloria;Guzmán;29887766;Brandsen;Quilmes;890;1878;gguzman@email.com;-890.00;1500.00
-Iván;Romero;36223344;Piedras;CABA;142;1070;iromero@email.com;2500.25;1200.00
-Elena;Navarro;42001122;Chacabuco;San Luis;50;5700;enavarro@email.com;75.00;300.00
-Marcos;Vidal;35112233;Garay;CABA;2300;1256;mvidal@email.com;1400.60;900.00
-Silvia;Medina;27445566;Castelli;Lomas de Zamora;78;1832;smedina@email.com;-30.45;400.00
-Oscar;Ortega;30556677;Roca;Paraná;441;3100;oortega@email.com;620.00;800.00
-Natalia;Garrido;39667788;Caseros;Salta;1090;4400;ngarrido@email.com;8900.15;4000.00
-Jorge;Cortés;23778899;Rawson;CABA;550;1182;jcortes@email.com;0.00;500.00
-Lorena;Ramos;34110099;Suipacha;CABA;12;1008;lramos@email.com;145.80;400.00
-Felipe;Blanco;41554433;Viamonte;CABA;1800;1055;fblanco@email.com;-12.50;200.00
-Rosa;Aguilar;28332211;Junín;CABA;940;1113;raguilar@email.com;2300.75;1500.00
-Víctor;Méndez;32776655;Montevideo;CABA;44;1019;vmendez@email.com;540.00;700.00
-Clara;Soler;35889900;Arenales;CABA;2101;1124;csoler@email.com;-115.30;500.00
-Ramón;Serrano;21009988;Quintana;CABA;145;1129;rserrano@email.com;90.00;300.00
-Alicia;Ibáñez;30112244;Callao;CABA;1600;1023;aibanez@email.com;320.40;600.00
-Tomás;Esteban;26445577;Libertador;CABA;4500;1425;testeban@email.com;11000.00;5000.00
-Julia;Pascual;40334422;Ayacucho;CABA;800;1111;jpascual@email.com;0.00;450.00
-Rubén;Bravo;37221100;Talcahuano;CABA;330;1013;rbravo@email.com;-45.00;300.00
-Ángela;Cano;29556677;Esmeralda;CABA;700;1007;acano@email.com;760.20;900.00
-Pedro;Marín;31887766;Maipú;CABA;150;1006;pmarin@email.com;150.55;500.00
-Teresa;Gil;25112233;Florida;CABA;90;1005;tgil@email.com;2900.00;1500.00
-Daniel;Ferrer;34998877;Reconquista;CABA;450;1003;dferrer@email.com;-250.80;800.00
-Sonia;Santos;38223344;Perón;CABA;1100;1038;ssantos@email.com;640.10;700.00
-Héctor;Rubio;22445566;Uruguay;CABA;650;1015;hrubio@email.com;45.00;300.00
-Marina;Lozano;33776655;Paraná;CABA;120;1017;mlozano@email.com;0.00;500.00
-Julián;Sanz;41001122;Rodríguez Peña;CABA;500;1020;jsanz@email.com;1800.25;1200.00
-Esther;Pardo;27554433;Sarmiento;CABA;1500;1042;epardo@email.com;-10.00;200.00
-Francisco;Fuentes;36112233;Cangallo;CABA;180;1035;ffuentes@email.com;520.40;750.00
-Bárbara;Cruz;30223344;Loria;Lomas de Zamora;45;1832;bcruz@email.com;3100.00;2000.00
+CC;Alejandro;Ruiz;34567890;Av. Rivadavia;CABA;4560;1406;aruiz@email.com;2450.00;1500.00
+CS;Mónica;Suárez;28123456;Calle Corrientes;Rosario;120;2000;msuarez@email.com;-120.50;500.00
+CA;Javier;Méndez;39876543;Bv. Oroño;Santa Fe;890;3000;jmendez@email.com;0.00;300.00
+CC;Lucía;Torres;32112233;9 de Julio;Córdoba;1250;5000;ltorres@email.com;340.25;1000.00
+CA;Ricardo;Peña;25443322;San Martín;Mendoza;55;5500;rpena@email.com;12500.80;5000.00
+CS;Sofía;Castro;41223344;Colón;Mar del Plata;3421;7600;scastro@email.com;-15.00;200.00
+CC;Gabriel;Ortiz;30998877;Belgrano;Salta;678;4400;gortiz@email.com;670.45;800.00
+CA;Valeria;Núñez;35667788;Sarmiento;Tucumán;102;4000;vnunez@email.com;2100.00;1200.00
+CS;Fernando;Silva;22334455;Pueyrredón;Neuquén;889;8300;fsilva@email.com;-450.20;1000.00
+CA;Beatriz;Luna;27889900;Mitre;La Plata;14;1900;bluna@email.com;89.30;400.00
+CC;Hugo;Morales;33445566;Entre Ríos;Bahía Blanca;770;8000;hmorales@email.com;15.75;300.00
+CS;Carmen;Reyes;29001122;Moreno;CABA;231;1001;creyes@email.com;0.00;600.00
+CC;Diego;Delgado;36554433;Paso;Posadas;1540;3300;ddelgado@email.com;5600.00;2500.00
+CA;Patricia;León;24332211;Alvear;Resistencia;92;3500;pleon@email.com;-200.00;750.00
+CC;Raúl;Herrera;31221100;España;Jujuy;430;4600;rherrera@email.com;120.10;400.00
+CS;Isabel;Domínguez;37887766;Libertad;CABA;1200;1012;idominguez@email.com;4300.50;2000.00
+CA;Andrés;Vargas;26556677;Ituzaingó;Corrientes;654;3400;avargas@email.com;980.00;1000.00
+CS;Paola;Castillo;40110022;Lavalle;CABA;88;1047;pcastillo@email.com;-55.60;300.00
+CC;Sergio;Flores;38776655;Maipú;Vicente López;212;1602;sflores@email.com;12.00;250.00
+CA;Adriana;Jiménez;33441122;French;CABA;3200;1425;ajimenez@email.com;0.00;500.00
+CS;Manuel;Moreno;21334455;Berutti;Avellaneda;115;1870;mmoreno@email.com;310.40;600.00
+CC;Gloria;Guzmán;29887766;Brandsen;Quilmes;890;1878;gguzman@email.com;-890.00;1500.00
+CA;Iván;Romero;36223344;Piedras;CABA;142;1070;iromero@email.com;2500.25;1200.00
+CS;Elena;Navarro;42001122;Chacabuco;San Luis;50;5700;enavarro@email.com;75.00;300.00
+CC;Marcos;Vidal;35112233;Garay;CABA;2300;1256;mvidal@email.com;1400.60;900.00
+CA;Silvia;Medina;27445566;Castelli;Lomas de Zamora;78;1832;smedina@email.com;-30.45;400.00
+CC;Oscar;Ortega;30556677;Roca;Paraná;441;3100;oortega@email.com;620.00;800.00
+CS;Natalia;Garrido;39667788;Caseros;Salta;1090;4400;ngarrido@email.com;8900.15;4000.00
+CA;Jorge;Cortés;23778899;Rawson;CABA;550;1182;jcortes@email.com;0.00;500.00
+CS;Lorena;Ramos;34110099;Suipacha;CABA;12;1008;lramos@email.com;145.80;400.00
+CC;Felipe;Blanco;41554433;Viamonte;CABA;1800;1055;fblanco@email.com;-12.50;200.00
+CA;Rosa;Aguilar;28332211;Junín;CABA;940;1113;raguilar@email.com;2300.75;1500.00
+CS;Víctor;Méndez;32776655;Montevideo;CABA;44;1019;vmendez@email.com;540.00;700.00
+CC;Clara;Soler;35889900;Arenales;CABA;2101;1124;csoler@email.com;-115.30;500.00
+CA;Ramón;Serrano;21009988;Quintana;CABA;145;1129;rserrano@email.com;90.00;300.00
+CS;Alicia;Ibáñez;30112244;Callao;CABA;1600;1023;aibanez@email.com;320.40;600.00
+CC;Tomás;Esteban;26445577;Libertador;CABA;4500;1425;testeban@email.com;11000.00;5000.00
+CA;Julia;Pascual;40334422;Ayacucho;CABA;800;1111;jpascual@email.com;0.00;450.00
+CS;Rubén;Bravo;37221100;Talcahuano;CABA;330;1013;rbravo@email.com;-45.00;300.00
+CC;Ángela;Cano;29556677;Esmeralda;CABA;700;1007;acano@email.com;760.20;900.00
+CA;Pedro;Marín;31887766;Maipú;CABA;150;1006;pmarin@email.com;150.55;500.00
+CS;Teresa;Gil;25112233;Florida;CABA;90;1005;tgil@email.com;2900.00;1500.00
+CC;Daniel;Ferrer;34998877;Reconquista;CABA;450;1003;dferrer@email.com;-250.80;800.00
+CA;Sonia;Santos;38223344;Perón;CABA;1100;1038;ssantos@email.com;640.10;700.00
+CS;Héctor;Rubio;22445566;Uruguay;CABA;650;1015;hrubio@email.com;45.00;300.00
+CC;Marina;Lozano;33776655;Paraná;CABA;120;1017;mlozano@email.com;0.00;500.00
+CA;Julián;Sanz;41001122;Rodríguez Peña;CABA;500;1020;jsanz@email.com;1800.25;1200.00
+CS;Esther;Pardo;27554433;Sarmiento;CABA;1500;1042;epardo@email.com;-10.00;200.00
+CC;Francisco;Fuentes;36112233;Cangallo;CABA;180;1035;ffuentes@email.com;520.40;750.00
+CA;Bárbara;Cruz;30223344;Loria;Lomas de Zamora;45;1832;bcruz@email.com;3100.00;2000.00

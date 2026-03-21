@@ -156,8 +156,8 @@ public class Main {
 
     private static void cargarDatos(Banco banco) {
         LecturaArchivo lecturaArchivo = new LecturaArchivo();
-        List<CuentaCorriente> listadoCuentas = lecturaArchivo.leerArchivo();
-        for (CuentaCorriente cuenta : listadoCuentas) {
+        List<Cuenta> listadoCuentas = lecturaArchivo.leerArchivo();
+        for (Cuenta cuenta : listadoCuentas) {
             banco.setCuenta(cuenta);
             System.out.println("Cuenta cargada: " + cuenta.getNumeroCuenta());
         }
