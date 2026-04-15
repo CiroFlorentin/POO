@@ -133,7 +133,7 @@ public class Main {
         }
         double monto = leerDouble(sc, "Monto a depositar: $");
         cuenta.depositar(monto);
-        System.out.println("✅ Depósito exitoso. Nuevo saldo: $" + cuenta.getSaldo());
+        System.out.println("✅ Depósito exitoso. Nuevo balance: $" + cuenta.getSaldo());
     }
 
     private static void realizarTrans(Scanner sc, Banco banco) {
@@ -148,7 +148,7 @@ public class Main {
         } catch (CuentaNoEncontrada e) {
             System.err.println("⚠️ Error de búsqueda: " + e.getMessage());
         } catch (SaldoInsuficienteException e) {
-            System.err.println("🚫 Error de saldo: " + e.getMessage());
+            System.err.println("🚫 Error de balance: " + e.getMessage());
         } catch (Exception e) {
             System.err.println("Unexpected error: " + e.getMessage());
         }
@@ -169,7 +169,7 @@ public class Main {
         Cliente cliente1 = new Cliente("Homero", "Simpson", 11111111, c1);
 
         CajaAhorro ca = new CajaAhorro(cliente1);
-        ca.depositar(10000); // Le damos saldo inicial para probar transferencias
+        ca.depositar(10000); // Le damos balance inicial para probar transferencias
         banco.setCuenta(ca);
 
         Contacto c2 = new Contacto("Calle Falsa 123", "Paz", 456, 1665, "ned@test.com");

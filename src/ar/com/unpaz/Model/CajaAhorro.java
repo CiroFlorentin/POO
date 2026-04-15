@@ -15,7 +15,7 @@ public class CajaAhorro extends Cuenta {
 
     @Override
     public boolean retirar(double monto) throws SaldoInsuficienteException {
-        if (monto > saldo) throw new SaldoInsuficienteException("No tenés saldo suficiente. Saldo actual: " + saldo);
+        if (monto > saldo) throw new SaldoInsuficienteException("No tenés balance suficiente. Saldo actual: " + saldo);
         saldo -= monto;
         return true;
     }

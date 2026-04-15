@@ -79,7 +79,7 @@ public class Banco {
 
         System.out.println("======= REPORTE DE CLIENTES EN MORA =======");
         if (deudores.isEmpty()) {
-            System.out.println("No hay clientes con saldo negativo. ¡Todo al día!");
+            System.out.println("No hay clientes con balance negativo. ¡Todo al día!");
         } else {
             for (Cuenta c : deudores) {
                 System.out.println("Cliente: " + c.getTitular().getApellido() + ", " + c.getTitular().getNombre());
