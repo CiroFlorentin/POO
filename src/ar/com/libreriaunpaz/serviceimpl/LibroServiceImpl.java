@@ -16,6 +16,10 @@ public class LibroServiceImpl implements LibroService {
 
     @Override
     public void addLibro(Libro libro) {
+        Libro existente = repo.SearchWithCodigo(libro.getCodigo());
+        if (existente != null) {
+            throw new RuntimeException("Libro existente");
+        }
         repo.addLibro(libro);
     }
 

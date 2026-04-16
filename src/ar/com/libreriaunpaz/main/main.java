@@ -10,8 +10,8 @@ import ar.com.libreriaunpaz.serviceimpl.LibroServiceImpl;
 import java.util.List;
 import java.util.Scanner;
 
-public class libreria {
-    public static void libreria(String[] args) {
+public class main {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -63,9 +63,7 @@ public class libreria {
                     if (libros.isEmpty()) {
                         System.out.println("No hay libros cargados");
                     } else {
-                        for (Libro l : libros) {
-                            System.out.println(l);
-                        }
+                        mostrarHeader(libros);
                     }
                     break;
 
@@ -100,9 +98,7 @@ public class libreria {
                     if (prestados.isEmpty()) {
                         System.out.println("No hay libros prestados");
                     } else {
-                        for (Libro l : prestados) {
-                            System.out.println(l);
-                        }
+                        mostrarHeader(prestados);
                     }
                     break;
 
@@ -133,6 +129,15 @@ public class libreria {
         } while (opcion != 0);
 
         scanner.close();
+    }
+
+    private static void mostrarHeader(List<Libro> libros) {
+        System.out.printf("%-10s %-20s %-20s %-6s %-12s\n",
+                "CODIGO", "TITULO", "AUTOR", "AÑO", "ESTADO");
+        System.out.println("---------------------------------------------------------------------");
+        for (Libro l : libros) {
+            System.out.println(l);
+        }
     }
 }
 
